@@ -1,0 +1,24 @@
+spring:
+  # 运行环境 dev:开发环境|test:测试环境|prod:生产环境
+  profiles:
+    active: #spring.profiles.active#
+  thymeleaf:
+      cache: false
+
+server:
+  #  Tomcat  服务配置server:server:server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+  port: 80
+  servlet:
+    context-path: /
+
+fileServer:
+  domain: http://127.0.0.1:${server.port}
+
+files:
+    docservice:
+      url:
+        api: http://127.0.0.1:${server.port}/web-apps/apps/api/documents/api.js
